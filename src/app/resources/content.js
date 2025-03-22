@@ -1,19 +1,19 @@
 import { InlineCode } from "@/once-ui/components";
 
 const person = {
-  firstName: "Selene",
-  lastName: "Yu",
+  firstName: "Arth",
+  lastName: "Patel",
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Design Engineer",
-  avatar: "/images/avatar.jpg",
+  role: "Software Developer",
+  avatar: "/images/20241123_151048.heic",
   location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
 };
 
-const newsletter = {
-  display: true,
+const newsletter = { //THIS IS BLOCKED - ARTH
+  display: false,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: (
     <>
@@ -29,12 +29,12 @@ const social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system/nextjs-starter",
+    link: "https://github.com/Arthpatel1827",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/in/arth-patel-a31769285/",
   },
   {
     name: "X",
@@ -44,7 +44,7 @@ const social = [
   {
     name: "Email",
     icon: "email",
-    link: "mailto:example@gmail.com",
+    link: "arthpatel.ap1827@gmail.com",
   },
 ];
 
@@ -52,13 +52,17 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Design engineer and builder</>,
+  headline: <>Web & Software Developer</>,
   subline: (
     <>
-      I'm Selene, a design engineer at <InlineCode>FLY</InlineCode>, where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+      I'm {person.firstName}, a software engineer. <br />I am a passionate Web and Software Developer <br />with expertise in building scalable, efficient, and high-performing applications.
     </>
   ),
+};
+
+const resume = {
+  labek: "resume",
+  title: "CV",
 };
 
 const about = {
@@ -73,7 +77,7 @@ const about = {
     display: true,
   },
   calendar: {
-    display: true,
+    display: false,
     link: "https://cal.com",
   },
   intro: {
@@ -81,9 +85,13 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Hi, I'm {person.firstName} – A Web & Software Developer
+
+        I am a passionate web and software developer dedicated to building efficient, scalable, and innovative digital solutions. With a strong focus on backend development and a growing expertise in frontend technologies, I create applications that are both powerful and user-friendly.
+
+        I love solving complex problems, optimizing performance, and continuously learning new technologies to enhance my skills. Whether it's developing robust APIs, designing database architectures, or improving application performance, I am committed to delivering high-quality and maintainable code.
+
+        Let's connect and build something amazing together!
       </>
     ),
   },
@@ -92,9 +100,9 @@ const about = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "ABM WOOD DECOR PVT. LTD.",
+        timeframe: "2023 - 2024",
+        role: "Full-Stack Developer",
         achievements: [
           <>
             Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
@@ -116,9 +124,9 @@ const about = {
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Rife Software",
+        timeframe: "2022-2023",
+        role: "Web Developer",
         achievements: [
           <>
             Developed a design system that unified the brand across multiple platforms, improving
@@ -138,12 +146,14 @@ const about = {
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Ontario Tech University",
+        country: "Canada",
+        description: <>Studied Master's in Software Engineering.</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "C.K Pithawalla College of Engineering",
+        country: "India",
+        description: <>Studied Bachelor's in Computer Engineering.</>,
       },
     ],
   },
@@ -282,4 +292,4 @@ const gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, newsletter, home, about, blog, work, gallery, resume };

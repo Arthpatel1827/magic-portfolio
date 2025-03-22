@@ -4,9 +4,10 @@ import { Heading, Flex, Text, Button, Avatar, RevealFx, Arrow, Column } from "@/
 import { Projects } from "@/components/work/Projects";
 
 import { baseURL, routes } from "@/app/resources";
-import { home, about, person, newsletter } from "@/app/resources/content";
+import { home, about, person, newsletter, resume } from "@/app/resources/content";
 import { Mailchimp } from "@/components";
 import { Posts } from "@/components/blog/Posts";
+import DownloadCVButton from "@/components/resume/DownloadCVButton";
 
 export async function generateMetadata() {
   const title = home.title;
@@ -38,6 +39,14 @@ export async function generateMetadata() {
 }
 
 export default function Home() {
+  const handleDownloadCV = () => {
+    const link = document.createElement("a");
+    link.href = "/public/ARTH PATEL-CV.pdf"; // The CV file in the public folder
+    link.download = "Arth_Patel.pdf"; // Customize the downloaded file name
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   return (
     <Column maxWidth="m" gap="xl" horizontal="center">
       <script
@@ -75,25 +84,8 @@ export default function Home() {
             </Text>
           </RevealFx>
           <RevealFx translateY="12" delay={0.4} horizontal="start">
-            <Button
-              id="about"
-              data-border="rounded"
-              href="/about"
-              variant="secondary"
-              size="m"
-              arrowIcon
-            >
-              <Flex gap="8" vertical="center">
-                {about.avatar.display && (
-                  <Avatar
-                    style={{ marginLeft: "-0.75rem", marginRight: "0.25rem" }}
-                    src={person.avatar}
-                    size="m"
-                  />
-                )}
-                {about.title}
-              </Flex>
-            </Button>
+            <DownloadCVButton />
+            
           </RevealFx>
         </Column>
       </Column>
